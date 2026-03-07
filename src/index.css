@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink-glow: #ff6b9d;
+  --color-gold: #ffd700;
+  --color-rose: #ff4081;
+  --color-lavender: #e6b3ff;
+  --color-mint: #a8e6cf;
+  --color-peach: #ffb3ba;
+  --color-sky: #87ceeb;
+  --color-coral: #ff7f7f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  background: #0a0015;
+}
+
+/* Floating Hearts */
+@keyframes floatUp {
+  0% { transform: translateY(100vh) rotate(0deg) scale(0); opacity: 0; }
+  10% { opacity: 1; transform: translateY(90vh) rotate(36deg) scale(1); }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-10vh) rotate(360deg) scale(0.5); opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 157, 0.4), 0 0 40px rgba(255, 107, 157, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(255, 107, 157, 0.8), 0 0 80px rgba(255, 107, 157, 0.4); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes gift-bounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(-3deg); }
+  75% { transform: translateY(-5px) rotate(3deg); }
+}
+
+@keyframes lid-open {
+  0% { transform: rotateX(0deg) translateY(0); }
+  100% { transform: rotateX(-120deg) translateY(-30px); }
+}
+
+@keyframes gift-reveal {
+  0% { transform: scale(0) translateY(20px); opacity: 0; }
+  50% { transform: scale(1.2) translateY(-10px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: #ff6b9d; }
+  16% { border-color: #ffd700; }
+  33% { border-color: #a8e6cf; }
+  50% { border-color: #87ceeb; }
+  66% { border-color: #e6b3ff; }
+  83% { border-color: #ff7f7f; }
+  100% { border-color: #ff6b9d; }
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes cake-wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes text-glow {
+  0%, 100% { text-shadow: 0 0 10px rgba(255, 107, 157, 0.5), 0 0 20px rgba(255, 107, 157, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(255, 107, 157, 0.8), 0 0 40px rgba(255, 107, 157, 0.5), 0 0 60px rgba(255, 107, 157, 0.3); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+@keyframes birthday-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float-up {
+  animation: floatUp linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-gift-bounce {
+  animation: gift-bounce 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.animate-cake-wobble {
+  animation: cake-wobble 2s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite;
+  display: inline-block;
+}
+
+.birthday-gradient-text {
+  background: linear-gradient(270deg, #ff6b9d, #ffd700, #ff4081, #e6b3ff, #a8e6cf, #ff6b9d);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: birthday-text 4s ease infinite;
+}
+
+.gift-box-hover:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rainbow-border {
+  animation: rainbow-border 3s linear infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0015;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ff6b9d, #e6b3ff);
+  border-radius: 4px;
+}
+
+/* Star field background */
+.star {
+  animation: star-twinkle ease-in-out infinite;
+}
