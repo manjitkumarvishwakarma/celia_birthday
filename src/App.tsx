@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import StarField from './components/StarField';
 import FloatingHearts from './components/FloatingHearts';
 import Countdown from './components/Countdown';
@@ -278,6 +279,7 @@ function App() {
           </p>
         </footer>
       </div>
+      <Analytics />
     </div>
   );
 }
